@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { client } from "defi-sdk";
+import styles from "./App.module.css";
+import { AddressInput } from "./components";
+import { useAddress } from "./hooks/useAddress";
+import { Assets } from "./Assets";
+import { History } from "./History";
 
-function App() {
+export const endpoint = "wss://api-staging.zerion.io";
+export const API_TOKEN = "Zerion.0JOY6zZTTw6yl5Cvz9sdmXc7d5AhzVMG";
+
+client.configure({
+  url: endpoint,
+  apiToken: API_TOKEN,
+  hooks: {
+    willSendRequest: request => {
+      (request.payload as any).lol = "lol";
+      return request;
+    },
+  },
+});
+Object.assign(window, { client });
+
+const App = () => {
+  const [address, setAddress] = useAddress();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className={styles.page}>
+      <header>
+        <AddressInput onSubmit={setAddress} />
       </header>
+      {address ? (
+        <section className={styles.grid}>
+          <div className={styles.column}>
+            <h2>Assets</h2>
+            <Assets address={address} />
+          </div>
+          <div className={styles.column}>
+            <h2>History</h2>
+            <History address={address} />
+          </div>
+        </section>
+      ) : (
+        <section className={styles.noAddress}>No address to watch 🧐</section>
+      )}
     </div>
   );
-}
+};
 
 export default App;

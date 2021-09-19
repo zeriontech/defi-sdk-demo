@@ -1,0 +1,43 @@
+.asset {
+  height: 48px;
+  padding: 12px 0;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 32px minmax(200px, 1fr) minmax(48px, max-content) minmax(48px, max-content);
+
+  column-gap: 8px;
+  align-items: center;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  background-color: grey;
+  object-fit: cover;
+  text-align: center;
+  font-size: 9px;
+  font-weight: 500;
+  overflow: hidden;
+}
+
+.title {
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.value {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.number {
+  font-size: 12px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

@@ -10,6 +10,8 @@
     "@types/node": "^12.20.25",
     "@types/react": "^17.0.21",
     "@types/react-dom": "^17.0.9",
+    "bignumber.js": "^9.0.1",
+    "defi-sdk": "0.1.0-alpha.25",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -19,7 +21,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -39,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "typescript-plugin-css-modules": "^3.4.0"
   }
 }

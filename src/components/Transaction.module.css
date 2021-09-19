@@ -1,0 +1,23 @@
+.transaction {
+  height: 48px;
+  padding: 12px 0;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr max-content;
+  column-gap: 8px;
+  align-items: center;
+}
+
+.type {
+  font-weight: 500;
+}
+
+.date {
+  font-size: 9px;
+  color: #71727d;
+}
+
+.value {
+  font-size: 12px;
+  font-weight: 500;
+}
