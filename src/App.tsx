@@ -3,7 +3,7 @@ import { client } from "defi-sdk";
 import styles from "./App.module.css";
 import { AddressInput } from "./components";
 import { useAddress } from "./hooks/useAddress";
-import { Assets } from "./Assets";
+import { Positions } from "./Positions";
 import { History } from "./History";
 
 export const endpoint = "wss://api-staging.zerion.io";
@@ -32,8 +32,8 @@ const App = () => {
       {address ? (
         <section className={styles.grid}>
           <div className={styles.column}>
-            <h2>Assets</h2>
-            <Assets address={address} />
+            <h2>Positions</h2>
+            <Positions address={address} />
           </div>
           <div className={styles.column}>
             <h2>History</h2>
