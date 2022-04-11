@@ -7,13 +7,12 @@ export function useHistory(address?: string) {
     mergeStrategy: mergeList,
     getId: useCallback((item: Transaction) => item.hash, []),
     body: useMemo(() => {
-      const payload = {
-        address,
-        currency: "USD",
-      };
       return {
         scope: ["transactions"],
-        payload,
+        payload: {
+          address,
+          currency: "USD",
+        },
       };
     }, [address]),
   });
