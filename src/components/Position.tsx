@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./Position.module.css";
 import BigNumber from "bignumber.js";
-import type { AddressPosition } from "defi-sdk";
+import type { AddressPosition, Asset as TAsset } from "defi-sdk";
 
-interface AssetProps {
+interface PositionProps {
   position: AddressPosition;
 }
 
@@ -29,7 +29,7 @@ const get24hDiff = ({ quantity, asset }: PartialPosition) => {
   return 0;
 };
 
-export const Position = ({ position }: AssetProps) => {
+export const Position = ({ position }: PositionProps) => {
   const { asset } = position;
   return (
     <div className={styles.asset}>
@@ -53,6 +53,23 @@ export const Position = ({ position }: AssetProps) => {
           }}
         >{`${get24hDiff(position).toFixed(2)}$`}</div>
       </div>
+    </div>
+  );
+};
+
+interface AssetProps {
+  asset: TAsset;
+}
+
+export const Asset = ({ asset }: AssetProps) => {
+  return (
+    <div className={styles.asset}>
+      <img
+        className={styles.icon}
+        src={asset.icon_url || ""}
+        alt={asset.symbol?.slice(0, 3).toUpperCase() || "TOK"}
+      />
+      <span className={styles.title}>{asset.name}</span>
     </div>
   );
 };

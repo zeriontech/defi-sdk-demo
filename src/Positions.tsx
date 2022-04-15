@@ -17,8 +17,6 @@ export const Positions = ({ address }: PositionsProps) => {
     },
   );
 
-  console.log(value);
-
   return value ? (
     <>
       {value.positions?.map(position => (

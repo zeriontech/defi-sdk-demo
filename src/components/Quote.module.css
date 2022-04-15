@@ -1,0 +1,28 @@
+.quote {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+}
+
+.text {
+  margin-right: 24px;
+}
+
+.contract {
+  display: flex;
+  align-items: center;
+}
+
+.contractIcon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: grey;
+  object-fit: cover;
+  text-align: center;
+  font-size: 9px;
+  font-weight: 500;
+  overflow: hidden;
+  margin-right: 8px;
+}

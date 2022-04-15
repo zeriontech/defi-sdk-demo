@@ -5,8 +5,9 @@ import { AddressInput } from "./components";
 import { useAddress } from "./hooks/useAddress";
 import { Positions } from "./Positions";
 import { History } from "./History";
+import { SwapForm } from "./components/SwapForm";
 
-export const endpoint = "wss://api-staging.zerion.io";
+export const endpoint = "wss://api-v4.zerion.io";
 export const API_TOKEN = "Zerion.0JOY6zZTTw6yl5Cvz9sdmXc7d5AhzVMG";
 
 client.configure({
@@ -43,6 +44,7 @@ const App = () => {
       ) : (
         <section className={styles.noAddress}>No address to watch 🧐</section>
       )}
+      <SwapForm />
     </div>
   );
 };

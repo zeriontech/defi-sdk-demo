@@ -1,0 +1,86 @@
+.swapButton {
+  position: fixed;
+  top: 12px;
+  right: 16px;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 500px;
+  padding-bottom: 24px;
+}
+
+.formTitle {
+  margin-bottom: 24px;
+  margin-top: 0;
+  padding: 0;
+}
+
+.firstRow {
+  margin-bottom: 24px;
+  position: relative;
+  display: flex;
+}
+
+.formInput {
+  margin-right: 16px;
+  width: 200px;
+  text-align: right;
+}
+
+.assetMenuButton {
+  border: 1px solid transparent;
+  background: none;
+  height: 56px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
+.formButton {
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonIcon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: grey;
+  object-fit: cover;
+  text-align: center;
+  font-size: 9px;
+  font-weight: 500;
+  overflow: hidden;
+  margin-right: 8px;
+}
+
+.secondRow {
+  position: relative;
+  display: flex;
+  margin-bottom: 36px;
+}
+
+.quotes {
+  max-height: 300px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.quoteButton {
+  border: 1px solid transparent;
+  background: none;
+  height: 56px;
+  padding: 0 12px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  color: black;
+  width: 100%;
+}
