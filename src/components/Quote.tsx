@@ -35,8 +35,6 @@ export function Quote({ quote, asset }: QuoteProps) {
     asset_codes: [ETH],
   });
 
-  console.log(pricesData);
-
   const nativeAsset = useMemo(() => {
     return Object.values(pricesData?.prices || {})[0] || null;
   }, [pricesData]);
@@ -47,10 +45,9 @@ export function Quote({ quote, asset }: QuoteProps) {
     return String(gasPriceData?.price.fast);
   }, [gasPriceData]);
 
-  const gas = quote.estimated_gas;
   const feeFiatPrice =
-    gas && gasPrice && nativeAsset
-      ? getFeeFiatPrice(gas, gasPrice, nativeAsset)
+    quote.estimated_gas && gasPrice && nativeAsset
+      ? getFeeFiatPrice(quote.estimated_gas, gasPrice, nativeAsset)
       : null;
 
   return (
