@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/defi-sdk-demo/static/css/main.92562fdd.chunk.css",
-    "main.js": "/defi-sdk-demo/static/js/main.ff1a1433.chunk.js",
-    "main.js.map": "/defi-sdk-demo/static/js/main.ff1a1433.chunk.js.map",
+    "main.js": "/defi-sdk-demo/static/js/main.e05ef7b6.chunk.js",
+    "main.js.map": "/defi-sdk-demo/static/js/main.e05ef7b6.chunk.js.map",
     "runtime-main.js": "/defi-sdk-demo/static/js/runtime-main.6888f7af.js",
     "runtime-main.js.map": "/defi-sdk-demo/static/js/runtime-main.6888f7af.js.map",
     "static/js/2.b407503c.chunk.js": "/defi-sdk-demo/static/js/2.b407503c.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.6888f7af.js",
     "static/js/2.b407503c.chunk.js",
     "static/css/main.92562fdd.chunk.css",
-    "static/js/main.ff1a1433.chunk.js"
+    "static/js/main.e05ef7b6.chunk.js"
   ]
 }
