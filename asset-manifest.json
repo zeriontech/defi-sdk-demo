@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/defi-sdk-demo/static/css/main.92562fdd.chunk.css",
+    "main.js": "/defi-sdk-demo/static/js/main.48c68a02.chunk.js",
+    "main.js.map": "/defi-sdk-demo/static/js/main.48c68a02.chunk.js.map",
+    "runtime-main.js": "/defi-sdk-demo/static/js/runtime-main.6888f7af.js",
+    "runtime-main.js.map": "/defi-sdk-demo/static/js/runtime-main.6888f7af.js.map",
+    "static/js/2.621c7afe.chunk.js": "/defi-sdk-demo/static/js/2.621c7afe.chunk.js",
+    "static/js/2.621c7afe.chunk.js.map": "/defi-sdk-demo/static/js/2.621c7afe.chunk.js.map",
+    "index.html": "/defi-sdk-demo/index.html",
+    "static/css/main.92562fdd.chunk.css.map": "/defi-sdk-demo/static/css/main.92562fdd.chunk.css.map",
+    "static/js/2.621c7afe.chunk.js.LICENSE.txt": "/defi-sdk-demo/static/js/2.621c7afe.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6888f7af.js",
+    "static/js/2.621c7afe.chunk.js",
+    "static/css/main.92562fdd.chunk.css",
+    "static/js/main.48c68a02.chunk.js"
+  ]
+}
