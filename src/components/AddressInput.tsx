@@ -20,7 +20,7 @@ export const AddressInput = ({
       <input
         autoComplete="off"
         className={styles.input}
-        placeholder="Paste Etherium Address"
+        placeholder="Paste Ethereum Address"
         value={value}
         onChange={e => setValue(e.target.value || "")}
       ></input>
