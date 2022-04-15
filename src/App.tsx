@@ -44,7 +44,7 @@ const App = () => {
       ) : (
         <section className={styles.noAddress}>No address to watch 🧐</section>
       )}
-      <SwapForm />
+      <SwapForm address={address} />
     </div>
   );
 };

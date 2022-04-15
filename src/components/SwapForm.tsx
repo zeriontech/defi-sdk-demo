@@ -8,7 +8,6 @@ import {
 } from "defi-sdk";
 import debounce from "lodash/debounce";
 import { popularAssets } from "../constants/codes";
-import { useAddress } from "../hooks/useAddress";
 import { Menu } from "./utils/Menu";
 import { Modal } from "./utils/Modal";
 import { Asset, Position } from "./Position";
@@ -19,9 +18,11 @@ import { convert } from "../utils";
 import { Quote } from "./Quote";
 import { ETHEREUM } from "../constants/chains";
 
-const SwapFormContent = () => {
-  const [address] = useAddress();
+interface SwapFormProps {
+  address: string;
+}
 
+const SwapFormContent = ({ address }: SwapFormProps) => {
   const [sendMenuOpen, setSendMenuOpen] = useState(false);
   const [receiveMenuOpen, setReceiveMenuOpen] = useState(false);
 
@@ -245,8 +246,12 @@ const SwapFormContent = () => {
   );
 };
 
-export const SwapForm = () => {
+export const SwapForm = ({ address }: SwapFormProps) => {
   const [showSwapForm, setShowSwapForm] = useState(false);
+
+  if (!address) {
+    return null;
+  }
 
   return (
     <>
@@ -260,7 +265,7 @@ export const SwapForm = () => {
       ) : null}
       {showSwapForm ? (
         <Modal onDissmiss={() => setShowSwapForm(false)}>
-          <SwapFormContent />
+          <SwapFormContent address={address} />
         </Modal>
       ) : null}
     </>
