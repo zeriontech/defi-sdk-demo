@@ -1,5 +1,5 @@
 import React from "react";
-import { useAddressPositions } from "defi-sdk";
+import { AddressPosition, useAddressPositions } from "defi-sdk";
 import { Position } from "./components";
 
 interface PositionsProps {
@@ -7,15 +7,9 @@ interface PositionsProps {
 }
 
 export const Positions = ({ address }: PositionsProps) => {
-  const { value } = useAddressPositions(
-    {
-      currency: "USD",
-      address: address || "",
-    },
-    {
-      enabled: Boolean(address),
-    },
-  );
+  // add code to fetch address posiitons
+  const value = { positions: [] } as { positions: AddressPosition[] };
+  //end
 
   return value ? (
     <>

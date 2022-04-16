@@ -1,3 +1,4 @@
+import { Transaction as TTransaction } from "defi-sdk";
 import React from "react";
 import { Transaction } from "./components";
 import { useHistory } from "./hooks/useHistory";
@@ -7,11 +8,13 @@ interface HistoryProps {
 }
 
 export const History = ({ address }: HistoryProps) => {
-  const transactions = useHistory(address);
+  // add code to fetch address history
+  const value = [] as TTransaction[];
+  // end
 
-  return transactions.value ? (
+  return value ? (
     <>
-      {(transactions.value || [])?.map(transaction => (
+      {(value || [])?.map(transaction => (
         <Transaction key={transaction.hash} transaction={transaction} />
       ))}
     </>

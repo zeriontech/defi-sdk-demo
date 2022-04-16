@@ -11,6 +11,7 @@ export interface GasPriceInfo {
 }
 
 export function useGasPriceInfo() {
+  // using useSubscription hook
   return useSubscription<GasPriceInfo, "gas", "price">({
     namespace: "gas",
     mergeStrategy: mergeSingleEntity,

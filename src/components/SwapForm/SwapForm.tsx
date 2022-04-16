@@ -4,7 +4,7 @@ import debounce from "lodash/debounce";
 import { useQuery } from "react-query";
 import { Modal } from "./../utils/Modal";
 import styles from "./SwapForm.module.css";
-import { getQuotes } from "../../requests/getQuotes";
+import { getQuotes, Quote as TQuote } from "../../requests/getQuotes";
 import { convert } from "../../utils";
 import { Quote } from "./../Quote/Quote";
 import { ETHEREUM } from "../../constants/chains";
@@ -25,35 +25,10 @@ const SwapFormContent = ({ address }: SwapFormProps) => {
   );
   const [receiveAsset, setReceiveAsset] = useState<TAsset | null>(null);
 
-  const quotesParams = useMemo(() => {
-    if (!sendPosition || !receiveAsset || !sendValue) {
-      return null;
-    }
-    return {
-      amount: convert(
-        sendValue,
-        sendPosition.asset.implementations?.[ETHEREUM].decimals || 18,
-      ).toFixed(),
-      input_token: sendPosition.asset.asset_code,
-      output_token: receiveAsset.asset_code,
-      input_chain: ETHEREUM,
-      slippage: "3",
-    };
-  }, [sendPosition, receiveAsset, sendValue]);
-
-  const { data, isLoading } = useQuery(
-    ["getQuotes", quotesParams],
-    () => (quotesParams ? getQuotes(quotesParams) : null),
-    {
-      retry: 1,
-      refetchInterval: 20000,
-      enabled: Boolean(quotesParams),
-    },
-  );
-
-  const quotes = useMemo(() => {
-    return data?.data || [];
-  }, [data]);
+  // add code to fetch the quotes here:
+  const isLoading = false;
+  const quotes = [] as TQuote[];
+  // end
 
   const { selectedQuote, setSelecetedQuoteId } = useSelectedQuote(
     quotes,
@@ -71,7 +46,7 @@ const SwapFormContent = ({ address }: SwapFormProps) => {
         onPositionChange={setSendPosition}
         onValueChange={debouncedHandleChange}
       />
-      
+
       <ReceiveInput
         isLoading={isLoading}
         receiveAsset={receiveAsset}
@@ -83,8 +58,8 @@ const SwapFormContent = ({ address }: SwapFormProps) => {
         {receiveAsset
           ? quotes?.map((quote, index) => (
               <button
+                key={index}
                 className={styles.quoteButton}
-                key={quote.contract_metadata?.id || index}
                 onClick={() =>
                   setSelecetedQuoteId(quote.contract_metadata?.id || null)
                 }
