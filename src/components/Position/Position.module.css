@@ -1,10 +1,23 @@
+.position {
+  height: 56px;
+  padding: 12px 0;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 32px minmax(160px, 1fr) minmax(80px, max-content) minmax(
+      80px,
+      max-content
+    );
+
+  column-gap: 8px;
+  align-items: center;
+}
+
 .asset {
   height: 56px;
   padding: 12px 0;
   display: grid;
   width: 100%;
-  grid-template-columns: 32px minmax(200px, 1fr) minmax(48px, max-content) minmax(48px, max-content);
-
+  grid-template-columns: 32px 1fr minmax(80px, max-content);
   column-gap: 8px;
   align-items: center;
 }
@@ -26,6 +39,12 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.chain {
+  font-size: 10px;
+  font-weight: 500;
+  color: #71727d;
 }
 
 .value {
