@@ -94,3 +94,7 @@ button:active {
    background-color: #2558d9;
    color: white;
 }
+
+button:focus-visible {
+  outline: 2px solid #4375f1;
+}
