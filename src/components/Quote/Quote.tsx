@@ -5,6 +5,7 @@ import styles from "./Quote.module.css";
 import { ETH } from "../../constants/codes";
 import { useGasPriceInfo } from "../../hooks/useGasInfo";
 import { getFeeFiatPrice, getQuoteReceive } from "./helpers";
+import { getAssetSymbol } from "../Position/helpers";
 
 interface QuoteProps {
   quote: TQuote;
@@ -30,7 +31,7 @@ export function Quote({ quote, asset }: QuoteProps) {
   return (
     <div className={styles.quote}>
       <div className={styles.text}>
-        {`Receive: $${getQuoteReceive(quote, asset)}`}
+        {`Receive: ${getQuoteReceive(quote, asset)} ${getAssetSymbol(asset)}`}
       </div>
 
       <div className={styles.text}>
